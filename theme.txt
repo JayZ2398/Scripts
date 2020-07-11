@@ -1,0 +1,8 @@
+# use this page to install your Macish theme and icons
+firefox "https://www.gnome-look.org/p/1275087/", "https://www.pling.com/p/1305429/"
+# figure out how to install and set this theme with a command
+
+# figure out what other configurations you appreciate on a computer
+# OOH, how about automating signing into your accounts on firefox? 
+# Though maybe that would defeat the whole point of them being protected 
+# behind a password manager

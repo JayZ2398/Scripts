@@ -1,0 +1,18 @@
+# Install script for essential applications
+
+# apt packages
+sudo apt upgrade
+sudo apt install \
+overgrive,\ # would love to not depend on google drive eventually
+discord,\
+spotify,\
+notable,\
+steam,\
+python3.6
+# haskell-platform
+# add sagemath install and jupyter config here
+# install/configure a screenshot assistant here - maybe sharenix (sharex clone)?
+
+# snap packages
+sudo snap install --classic code # or code-insiders
+

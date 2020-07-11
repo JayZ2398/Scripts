@@ -1,0 +1,7 @@
+# configure background autoupdating
+sudo apt install unattended-upgrades && sudo dpkg-reconfigure unattended-upgrades
+
+# install this to make .appimage applications addable to your applications list
+sudo add-apt-repository ppa:appimagelauncher-team/stable
+sudo apt-get update
+sudo apt install appimagelauncher
