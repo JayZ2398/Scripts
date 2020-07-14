@@ -1,7 +1,21 @@
-# configure background autoupdating
-sudo apt install unattended-upgrades && sudo dpkg-reconfigure unattended-upgrades
+# Elevate session  
+sudo -s 
+# 
+# configure background apt autoupdating  
+apt install unattended-upgrades && sudo dpkg-reconfigure unattended-upgrades  
 
-# install this to make .appimage applications addable to your applications list
-sudo add-apt-repository ppa:appimagelauncher-team/stable
-sudo apt-get update
-sudo apt install appimagelauncher
+# install this to make .appimage applications addable to your applications list  
+add-apt-repository ppa:appimagelauncher-team/stable
+apt-get update
+apt install appimagelauncher
+
+# For package managing, PopOS uses Flatpak rather than Snap. You should avoid using Snap when you can. Flatpak is more open-source mentality AFAIK. 
+
+# Flatpak configuration  
+apt install flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo  
+
+echo "After the reboot, you should run appInstall"
+read -p "Press enter to reboot."
+
+reboot

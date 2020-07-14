@@ -1,0 +1,51 @@
+
+echo === JZ theme install ===
+
+if ! dpkg-query -s gnome-shell-extensions; then
+	# Install ocs-url (for one click theme installs from gnome-look.org
+	wget "https://dllb2.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MzA3NzQ2MDAiLCJ1IjpudWxsLCJsdCI6ImRvd25sb2FkIiwicyI6IjgwZDQ1NmM4NWQyNzRjMDZjMDEzNjYxODM3ODgwYmI0YjI2YjI3MTFkNjI1Y2NlNzk0ZjFiYzRkZDIxM2NmMmZkNjVkNDcwZTRlNmE0OGU5YzgyMjcxZjRjOTRlMDc4MGE0NGUxNWYzYTI2YjkyMTQ3MTZkZTlmN2VhNmMwZTdmIiwidCI6MTU5NDY5NzcyOCwic3RmcCI6IjkzYmVlN2FjNWQ0YjcxZmJiNWUyN2NkYmI3OTRjZTBiIiwic3RpcCI6IjEwMy4yMTcuMTY3LjM0In0.sb_zh1mmFTi7Be40qVxY219zPNM4aC6FfsUIYtOp1lQ/ocs-url_3.1.0-0ubuntu1_amd64.deb"
+	sudo dpkg -i "ocs-url_3.1.0-0ubuntu1_amd64.deb"
+	rm ocs-url_3.1.0-0ubuntu1_amd64.deb
+
+	# Install gnome-tweaks
+	sudo apt install -y gnome-tweaks
+
+	# Get user to install themes
+	echo Install these themes before continuing
+	echo Mojave-dark
+	echo 01-McMojave-circle
+	firefox "https://www.gnome-look.org/p/1275087/" "https://www.gnome-look.org/p/1275087/"
+
+	read -p "Once you have installed these themes: press enter to continue"
+
+	# Set themes
+	gsettings set org.gnome.desktop.interface icon-theme 'McMojave-circle'
+	gsettings set org.gnome.desktop.interface gtk-theme 'Mojave-dark'
+	
+	# Enable shell extensions
+	sudo apt install -y gnome-shell-extensions
+	echo System must reboot for changes to take effect, and this script must be run a second time to configure the shell theme.
+	read -p "Press enter to reboot"
+	reboot
+fi
+
+# Set shell theme
+
+echo "Sadly you'll have to do this manually."
+echo "1. Open gnome-tweaks, head to Extensions and enable 'User Themes'"
+echo "2. Restart gnome-tweaks"
+echo "3. Close gnome-tweaks"
+
+read -p "Press enter once you've done this"
+
+gsettings set org.gnome.shell.extensions.user-theme name 'Mojave-dark'
+
+# Misc shell config
+gsettings set org.gnome.shell.extensions.desktop-icons show-home true
+gsettings set org.gnome.shell.extensions.desktop-icons show-trash true
+
+echo To do
+echo "1. Set wallpaper to a nice one"
+echo "2. Automate install bootloader (refind) (though is this a good idea given it could muck up your computer? setting themes should be fine at least)"
+read -p "Press enter to close"
+

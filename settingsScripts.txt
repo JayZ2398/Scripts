@@ -1,0 +1,16 @@
+echo === JZ GNOME Settings ===
+
+# Fix time assuming dual booting with Windows
+timedatectl set-local-rtc 1 --adjust-system-clock
+
+# Enable night light
+gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
+
+# Set Nautilus to list view
+gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
+
+# Set window buttons (minimize and close)
+gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,close"
+
+# Enable seconds in time
+gsettings set org.gnome.desktop.interface clock-show-seconds true

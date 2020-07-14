@@ -1,18 +1,42 @@
 # Install script for essential applications
 
+echo === JZ Linux app install ===
+
+# Flatpak packages
+flatpak install -y flathub com.valvesoftware.Steam
+flatpak install -y flathub com.spotify.Client
+flatpak install -y flathub com.discordapp.Discord
+flatpak install -y flathub com.jetbrains.IntelliJ-IDEA-Community
+flatpak install -y flathub org.nextcloud.Nextcloud
+flatpak install -y flathub com.visualstudio.code
+
 # apt packages
-sudo apt upgrade
-sudo apt install \
-overgrive,\ # would love to not depend on google drive eventually
-discord,\
-spotify,\
-notable,\
-steam,\
-python3.6
-# haskell-platform
-# add sagemath install and jupyter config here
-# install/configure a screenshot assistant here - maybe sharenix (sharex clone)?
 
-# snap packages
-sudo snap install --classic code # or code-insiders
+sudo apt install -y python3
+sudo apt install -y sagemath
 
+# Flameshot
+sudo apt install -y flameshot
+flameshot config -a true -f "%F %T" -m "#8B0000" -k "#00BFFF"
+
+# Syncthing
+# Add the release PGP keys:
+curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+
+# Add the "stable" channel to your APT sources:
+echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+# Update and install syncthing:
+sudo apt update
+sudo apt install -y syncthing
+
+# Manual install
+echo === MANUAL INSTALL ===
+echo Notable Markdown editor
+firefox "https://notable.app/#download"
+
+# Keyboard shortcuts
+echo === Keyboard shortcuts ===
+echo "I haven't figured out how to automatically set these, but here are your beloved custom shortcuts:"
+echo Ctrl-Alt-Shift-S flameshot gui
+echo Ctrl-Shift-Esc gnome-system-monitor
