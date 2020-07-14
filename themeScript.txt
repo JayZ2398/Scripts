@@ -31,6 +31,7 @@ fi
 
 # Set shell theme
 
+echo "Shell theme"
 echo "Sadly you'll have to do this manually."
 echo "1. Open gnome-tweaks, head to Extensions and enable 'User Themes'"
 echo "2. Restart gnome-tweaks"
@@ -40,9 +41,16 @@ read -p "Press enter once you've done this"
 
 gsettings set org.gnome.shell.extensions.user-theme name 'Mojave-dark'
 
+# Add other extensions
+
+echo "Turn these extensions on"
+firefox "https://micheleg.github.io/dash-to-dock/" \
+	"https://extensions.gnome.org/extension/906/sound-output-device-chooser/"
+
 # Misc shell config
 gsettings set org.gnome.shell.extensions.desktop-icons show-home true
 gsettings set org.gnome.shell.extensions.desktop-icons show-trash true
+
 
 echo To do
 echo "1. Set wallpaper to a nice one"
