@@ -14,3 +14,11 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,close"
 
 # Enable seconds in time
 gsettings set org.gnome.desktop.interface clock-show-seconds true
+
+# Keyboard shortcuts
+echo === Keyboard shortcuts ===
+echo "I haven't figured out how to automatically set these, but here are your beloved custom shortcuts:"
+echo Ctrl-Alt-Shift-S flameshot gui
+echo Ctrl-Shift-Esc gnome-system-monitor
+echo Super-H Hide window
+echo Super-D Hide all windows

@@ -35,8 +35,4 @@ echo === MANUAL INSTALL ===
 echo Notable Markdown editor
 firefox "https://notable.app/#download"
 
-# Keyboard shortcuts
-echo === Keyboard shortcuts ===
-echo "I haven't figured out how to automatically set these, but here are your beloved custom shortcuts:"
-echo Ctrl-Alt-Shift-S flameshot gui
-echo Ctrl-Shift-Esc gnome-system-monitor
+
